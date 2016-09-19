@@ -1,0 +1,29 @@
+﻿<Window x:Class="AccessLauncher.BackEnd.BackEndSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Rollback Tool" Height="400" Width="600">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="107" VerticalAlignment="Top" Width="139" Source="Images/P&amp;B-Blue.png" Margin="10,10,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="145,10,0,0" TextWrapping="Wrap" Text="Rollback Tool" VerticalAlignment="Top" Width="338" FontSize="20" FontWeight="Bold" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Right" Height="58" Margin="0,37,29,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="414"><Run Text="Use this tool to roll users to a previous rollout. The later rollout files will "/><Run FontStyle="Italic" Text="not"/><Run Text=" be deleted. However, they will be overwritten in time. All users will revert to the previous version on their next launch."/></TextBlock>
+        <Slider x:Name="VersionSlider1" Margin="0,157,10,0" VerticalAlignment="Top" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" SmallChange="1" HorizontalAlignment="Right" Width="391" Visibility="Hidden" ValueChanged="VersionSlider1_ValueChanged" IsSnapToTickEnabled="True"/>
+        <ComboBox x:Name="RollBackCombo" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="176" SelectedIndex="0" SelectionChanged="RollBackCombo_SelectionChanged">
+            <ComboBoxItem Content="Select type of roll-back." HorizontalAlignment="Left" Width="166" Tag=""/>
+            <ComboBoxItem Content="Roll back Admin" HorizontalAlignment="Left" Width="166" Tag="Admin"/>
+            <ComboBoxItem Content="Roll back Associates" HorizontalAlignment="Left" Width="166" Tag="Associates"/>
+            <ComboBoxItem Content="Roll back BOTH" HorizontalAlignment="Left" Width="166" Tag="Both"/>
+        </ComboBox>
+        <Label Content="Roll Back to a previous version" HorizontalAlignment="Left" Height="28" Margin="10,100,0,0" VerticalAlignment="Top" Width="176"/>
+        <Label x:Name="CurrentVersionLabel" Content="Current Version: " HorizontalAlignment="Left" Height="28" Margin="191,100,0,0" VerticalAlignment="Top" Width="372"/>
+        <Label x:Name="Slider1Label" Content="Slider1Label:" HorizontalAlignment="Left" Height="27" Margin="10,157,0,0" VerticalAlignment="Top" Width="176" Visibility="Hidden"/>
+        <Slider x:Name="VersionSlider2" Margin="0,184,10,0" VerticalAlignment="Top" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" SmallChange="1" HorizontalAlignment="Right" Width="391" Visibility="Hidden" ValueChanged="VersionSlider2_ValueChanged" IsSnapToTickEnabled="True"/>
+        <Label x:Name="Slider2Label" Content="Slider2Label:" HorizontalAlignment="Left" Height="27" Margin="10,179,0,0" VerticalAlignment="Top" Width="176" Visibility="Hidden"/>
+        <Button x:Name="ExecuteRollbackBtn" Content="Execute RollBack" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" Width="111" Click="ExecuteRollbackBtn_Click"/>
+        <DockPanel LastChildFill="False" Margin="0" VerticalAlignment="Bottom">
+            <StatusBar DockPanel.Dock="Bottom" Height="38" Width="582" Margin="5,0">
+                <Label x:Name="statusLabel" Height="30" Width="572" />
+            </StatusBar>
+        </DockPanel>
+
+    </Grid>
+</Window>

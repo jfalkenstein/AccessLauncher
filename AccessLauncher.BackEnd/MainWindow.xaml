@@ -1,0 +1,28 @@
+﻿<Window x:Name="MainWindowWindow" x:Class="AccessLauncher.BackEnd.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PBUSA Back End Manager" Height="232" Width="525">
+    <Grid>
+        <Button x:Name="GoToRollOutBtn" Content="Roll Out New Front End Implimentation" HorizontalAlignment="Center" Margin="0,137,0,0" VerticalAlignment="Top" Width="360" Panel.ZIndex="1" Click="GoToRollOutBtn_Click"/>
+        <Image HorizontalAlignment="Left" Height="82" Margin="10,37,0,0" VerticalAlignment="Top" Width="111" Source="Images/P&amp;B-Blue.png"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="145,37,0,0" TextWrapping="Wrap" Text="Access Database Back End Manager" VerticalAlignment="Top" Width="338" FontSize="20" FontWeight="Bold" Panel.ZIndex="1"/>
+        <Label x:Name="versionNumber" Content="Current Version:" HorizontalAlignment="Left" Height="25" Margin="140,70,0,0" VerticalAlignment="Top" Width="343"/>
+        <Label x:Name="LastRolloutLabel" Content="Last Rollout:" HorizontalAlignment="Left" Height="25" Margin="140,55,0,0" VerticalAlignment="Top" Width="343"/>
+        <Slider x:Name="LockoutSlider" HorizontalAlignment="Right" Height="24" Margin="0,95,321,0" VerticalAlignment="Top" Width="43" Maximum="1" SmallChange="1" TickPlacement="Both" Value="-1" ValueChanged="LockoutSlider_ValueChanged"/>
+        <Label x:Name="LockoutLabel" Content="Global Lockout is off" HorizontalAlignment="Right" Margin="0,95,0,0" VerticalAlignment="Top" Width="281"/>
+        <Label x:Name="LockoutLabel_Copy" Content="Off" HorizontalAlignment="Right" Margin="0,95,364,0" VerticalAlignment="Top" Width="32"/>
+        <Label x:Name="LockoutLabel_Copy1" Content="On" HorizontalAlignment="Right" Margin="0,95,289,0" VerticalAlignment="Top" Width="32"/>
+        <DockPanel x:Name="MenuDocPanel" VerticalAlignment="Top">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Actions">
+                    <MenuItem x:Name="ReinstallBackEndMenu" Header="_Reinstall Back End" Click="ReinstallBackEndMenu_Click" />
+                    <MenuItem x:Name="ChangeAccessTargetMenu" Header="_Change Access back end target" Click="ChangeAccessTargetMenu_Click" />
+                    <MenuItem x:Name="PushOutLauncherComponentsMenu" Header="_Push out new launcher components" Click="PushNewLauncherFilesBtn_Click" />
+                    <MenuItem x:Name="RollBackMenu" Header="_Roll users back to a previous version" Click="GoToChangeSettingsBtn_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <ProgressBar x:Name="ReconstructionPB" HorizontalAlignment="Left" Margin="10,163,0,0" Width="218" Height="30" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="StatusLabel" Content="" HorizontalAlignment="Left" Height="28" Margin="236,164,0,0" VerticalAlignment="Top" Width="271"/>
+    </Grid>
+</Window>
